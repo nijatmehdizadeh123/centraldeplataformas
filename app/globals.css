@@ -1,0 +1,87 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card-bg: var(--card-bg);
+  --color-primary: var(--primary);
+  --color-accent: var(--accent);
+  --color-gold: #e2b74b;
+  --color-violet-deep: #1a0a2e;
+  --color-orange-electric: #ff6b00;
+}
+
+:root {
+  --background: #0a0514;
+  --foreground: #ffffff;
+  --card-bg: #12082a;
+  --primary: #ff6b00;
+  --accent: #9d4edd;
+}
+
+@layer base {
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .btn-gradient {
+    @apply bg-linear-to-r from-primary to-accent text-white hover:brightness-110 transition-all duration-300;
+  }
+
+  .gold-text {
+    @apply bg-clip-text text-transparent bg-linear-to-r from-[#f9d423] via-[#e2b74b] to-[#b8860b];
+  }
+
+  .casino-card-bg {
+    @apply bg-[#150a25] border border-white/5 hover:border-primary/40 transition-all duration-500;
+  }
+
+  .felt-texture {
+    background-image: radial-gradient(circle at 20% 50%, rgba(157, 78, 221, 0.08) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, rgba(255, 107, 0, 0.06) 0%, transparent 40%);
+  }
+
+  .casino-glow {
+    box-shadow: 0 0 30px rgba(255, 107, 0, 0.15), 0 0 60px rgba(157, 78, 221, 0.1);
+  }
+
+  .gold-shimmer {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .gold-shimmer::after {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+      45deg,
+      transparent 45%,
+      rgba(255, 215, 0, 0.1) 50%,
+      transparent 55%
+    );
+    animation: shimmer 3s infinite;
+  }
+
+  .animate-marquee {
+    display: flex;
+    width: max-content;
+    animation: marquee 20s linear infinite;
+    will-change: transform;
+  }
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes shimmer {
+  0% { transform: translate(-30%, -30%); }
+  100% { transform: translate(30%, 30%); }
+}
