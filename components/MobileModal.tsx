@@ -90,15 +90,25 @@ export default function MobileModal({ gclid }: MobileModalProps) {
         </div>
 
         <div className="mt-auto bg-black/40 p-6 border-t border-white/5 text-center">
-          <div className="flex justify-center gap-4 mb-4 opacity-70">
-            <div className="relative w-8 h-8">
-              <Image src="/icons/18plus.svg" alt="18+" fill className="object-contain" />
-            </div>
-            <div className="relative w-24 h-8">
-              <Image src="/srij.png" alt="SRIJ" fill className="object-contain" />
-            </div>
-            <div className="relative w-28 h-8">
-              <Image src="/jogo-responsavel.png" alt="Utilizacao Responsavel" fill className="object-contain" />
+          <div className="w-full max-w-sm mx-auto mb-4 pointer-events-none select-none">
+            <div className="grid grid-cols-5 gap-2 items-center justify-items-center">
+              {[
+                { src: '/compliance/18plus.png', alt: '18+' },
+                { src: '/compliance/srij.png', alt: 'SRIJ' },
+                { src: '/compliance/begambleaware.png', alt: 'BeGambleAware' },
+                { src: '/compliance/gamcare.png', alt: 'GamCare' },
+                { src: '/compliance/ibas.png', alt: 'IBAS' },
+              ].map((logo) => (
+                <div key={logo.src} className="relative h-7 w-full flex items-center justify-center">
+                  <Image
+                    src={logo.src}
+                    alt={logo.alt}
+                    width={56}
+                    height={28}
+                    className="object-contain h-7 w-auto max-w-full"
+                  />
+                </div>
+              ))}
             </div>
           </div>
           <div className="text-[8px] text-white/10 uppercase tracking-[0.4em] font-black">

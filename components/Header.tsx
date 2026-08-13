@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { NAV_LINKS } from '@/app/data/site';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -23,15 +24,29 @@ export default function Header() {
           </div>
         </Link>
 
-        <nav className="hidden lg:flex items-center gap-10">
+        <nav className="hidden lg:flex items-center gap-8">
           <div className="flex items-center gap-2 px-3 py-1 rounded-full bg-red-600/10 border border-red-600/20">
             <span className="text-[10px] font-black text-red-500">18+</span>
           </div>
-          <Link href="/" className="text-xs font-bold uppercase tracking-[0.2em] text-white/80 hover:text-primary transition-all">Início</Link>
-          <Link href="#brands" className="text-xs font-bold uppercase tracking-[0.2em] text-white/80 hover:text-primary transition-all">Plataformas</Link>
-          <Link href="#guide" className="text-xs font-bold uppercase tracking-[0.2em] text-white/80 hover:text-primary transition-all">Guia</Link>
-          <Link href="#about" className="text-xs font-bold uppercase tracking-[0.2em] text-white/80 hover:text-primary transition-all">Sobre Nós</Link>
-          <Link href="#contact" className="px-6 py-2 rounded-full border border-primary/40 text-xs font-bold uppercase tracking-[0.2em] text-primary hover:bg-primary hover:text-black transition-all">Contacto</Link>
+          {NAV_LINKS.map((link) =>
+            link.href === '/contacto' ? (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="px-6 py-2 rounded-full border border-primary/40 text-xs font-bold uppercase tracking-[0.2em] text-primary hover:bg-primary hover:text-black transition-all"
+              >
+                {link.label}
+              </Link>
+            ) : (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="text-xs font-bold uppercase tracking-[0.2em] text-white/80 hover:text-primary transition-all"
+              >
+                {link.label}
+              </Link>
+            )
+          )}
         </nav>
 
         <button
@@ -50,11 +65,16 @@ export default function Header() {
       {isMenuOpen && (
         <div className="lg:hidden bg-background border-b border-[#d4af37]/15">
           <nav className="flex flex-col p-8 gap-6">
-            <Link href="/" onClick={() => setIsMenuOpen(false)} className="text-sm font-bold uppercase tracking-widest text-white/70 hover:text-primary">Início</Link>
-            <Link href="#brands" onClick={() => setIsMenuOpen(false)} className="text-sm font-bold uppercase tracking-widest text-white/70 hover:text-primary">Plataformas</Link>
-            <Link href="#guide" onClick={() => setIsMenuOpen(false)} className="text-sm font-bold uppercase tracking-widest text-white/70 hover:text-primary">Guia</Link>
-            <Link href="#about" onClick={() => setIsMenuOpen(false)} className="text-sm font-bold uppercase tracking-widest text-white/70 hover:text-primary">Sobre Nós</Link>
-            <Link href="#contact" onClick={() => setIsMenuOpen(false)} className="text-sm font-bold uppercase tracking-widest text-primary">Contacto</Link>
+            {NAV_LINKS.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                onClick={() => setIsMenuOpen(false)}
+                className={`text-sm font-bold uppercase tracking-widest ${link.href === '/contacto' ? 'text-primary' : 'text-white/70 hover:text-primary'}`}
+              >
+                {link.label}
+              </Link>
+            ))}
           </nav>
         </div>
       )}

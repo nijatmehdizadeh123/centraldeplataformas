@@ -7,6 +7,7 @@ import FaqSection from "@/components/FaqSection";
 import MobileModal from "@/components/MobileModal";
 import AffiliateDisclosure from "@/components/AffiliateDisclosure";
 import ComplianceTopBar from "@/components/ComplianceTopBar";
+import Link from "next/link";
 import { Suspense } from "react";
 
 interface PageProps {
@@ -54,6 +55,15 @@ export default async function Home({ searchParams }: PageProps) {
                 priority={index < 3}
               />
             ))}
+          </div>
+
+          <div className="text-center mt-10">
+            <Link
+              href="/plataformas"
+              className="inline-flex text-xs font-black uppercase tracking-[0.2em] text-primary hover:underline"
+            >
+              Ver todas as plataformas →
+            </Link>
           </div>
         </div>
       </section>
