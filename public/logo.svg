@@ -1,16 +1,12 @@
 <svg width="640" height="160" viewBox="0 0 640 160" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <!-- Shield icon mark -->
   <g transform="translate(20, 20)">
     <path d="M60 5L15 25V55C15 82.5 35 108 60 118C85 108 105 82.5 105 55V25L60 5Z" fill="#ff6b00"/>
     <path d="M60 22L72 48H48L60 22Z" fill="white"/>
     <path d="M60 100V48H78L60 100Z" fill="#9d4edd"/>
-    <!-- Lightning bolt -->
     <path d="M58 38L52 52H60L56 68L68 48H60L58 38Z" fill="#f9d423"/>
   </g>
-  <!-- Wordmark -->
   <text x="150" y="72" font-family="Arial, Helvetica, sans-serif" font-weight="900" font-size="42" fill="#ff6b00">Central</text>
   <text x="150" y="112" font-family="Arial, Helvetica, sans-serif" font-weight="900" font-size="42" fill="#9d4edd">PT</text>
-  <text x="230" y="112" font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="42" fill="#ffffff">Casinos</text>
-  <!-- Domain sub-line -->
+  <text x="230" y="112" font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="42" fill="#ffffff">Platforms</text>
   <text x="150" y="138" font-family="Arial, Helvetica, sans-serif" font-weight="600" font-size="14" fill="#ffffff" opacity="0.5" letter-spacing="4">CENTRALDEPLATAFORMAS.COM</text>
 </svg>

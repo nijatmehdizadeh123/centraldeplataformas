@@ -6,45 +6,53 @@
   --color-card-bg: var(--card-bg);
   --color-primary: var(--primary);
   --color-accent: var(--accent);
-  --color-gold: #e2b74b;
-  --color-violet-deep: #1a0a2e;
-  --color-orange-electric: #ff6b00;
+  --color-gold: #d4af37;
+  --color-gold-light: #f5d76e;
+  --color-gold-dark: #8b6e31;
+  --color-charcoal: #121212;
+  --font-heading: var(--font-heading);
+  --font-body: var(--font-body);
 }
 
 :root {
-  --background: #0a0514;
-  --foreground: #ffffff;
-  --card-bg: #12082a;
-  --primary: #ff6b00;
-  --accent: #9d4edd;
+  --background: #0a0a0a;
+  --foreground: #f5f5f5;
+  --card-bg: #161616;
+  --primary: #d4af37;
+  --accent: #f5d76e;
 }
 
 @layer base {
   body {
     @apply bg-background text-foreground;
   }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-heading), Georgia, serif;
+  }
 }
 
 @layer utilities {
   .btn-gradient {
-    @apply bg-linear-to-r from-primary to-accent text-white hover:brightness-110 transition-all duration-300;
+    @apply bg-linear-to-r from-[#8b6e31] via-[#d4af37] to-[#f5d76e] text-black hover:brightness-110 transition-all duration-300;
   }
 
   .gold-text {
-    @apply bg-clip-text text-transparent bg-linear-to-r from-[#f9d423] via-[#e2b74b] to-[#b8860b];
+    @apply bg-clip-text text-transparent bg-linear-to-r from-[#f5d76e] via-[#d4af37] to-[#8b6e31];
   }
 
-  .casino-card-bg {
-    @apply bg-[#150a25] border border-white/5 hover:border-primary/40 transition-all duration-500;
+  .platform-card-bg {
+    @apply bg-[#161616] border border-[#d4af37]/15 hover:border-[#d4af37]/50 transition-all duration-500;
   }
 
   .felt-texture {
-    background-image: radial-gradient(circle at 20% 50%, rgba(157, 78, 221, 0.08) 0%, transparent 50%),
-      radial-gradient(circle at 80% 20%, rgba(255, 107, 0, 0.06) 0%, transparent 40%);
+    background-image:
+      radial-gradient(circle at 20% 50%, rgba(212, 175, 55, 0.08) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, rgba(245, 215, 110, 0.05) 0%, transparent 40%);
   }
 
-  .casino-glow {
-    box-shadow: 0 0 30px rgba(255, 107, 0, 0.15), 0 0 60px rgba(157, 78, 221, 0.1);
+  .platform-glow {
+    box-shadow: 0 0 30px rgba(212, 175, 55, 0.12), 0 0 60px rgba(139, 110, 49, 0.08);
   }
 
   .gold-shimmer {
@@ -62,7 +70,7 @@
     background: linear-gradient(
       45deg,
       transparent 45%,
-      rgba(255, 215, 0, 0.1) 50%,
+      rgba(245, 215, 110, 0.18) 50%,
       transparent 55%
     );
     animation: shimmer 3s infinite;

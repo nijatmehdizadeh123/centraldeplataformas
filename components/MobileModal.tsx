@@ -37,15 +37,15 @@ export default function MobileModal({ gclid }: MobileModalProps) {
       aria-labelledby="modal-title"
     >
       <div className="min-h-screen flex flex-col felt-texture">
-        <div className="sticky top-0 z-[110] bg-[#0a0514]/80 backdrop-blur-xl border-b border-white/5 px-4 py-3 flex items-center justify-between">
-          <Link href="/" className="relative w-32 h-8">
+        <div className="sticky top-0 z-[110] bg-black/85 backdrop-blur-xl border-b border-[#d4af37]/15 px-4 py-3 flex items-center justify-between">
+          <Link href="/" className="relative w-12 h-12">
             <Image
               src="/logo.png"
               alt="Central de Plataformas"
               fill
               className="object-contain"
               priority
-              sizes="128px"
+              sizes="48px"
             />
           </Link>
           <button className="text-white p-2" aria-label="Menu">
@@ -90,12 +90,15 @@ export default function MobileModal({ gclid }: MobileModalProps) {
         </div>
 
         <div className="mt-auto bg-black/40 p-6 border-t border-white/5 text-center">
-          <div className="flex justify-center gap-4 mb-4 opacity-30 grayscale">
+          <div className="flex justify-center gap-4 mb-4 opacity-70">
             <div className="relative w-8 h-8">
               <Image src="/icons/18plus.svg" alt="18+" fill className="object-contain" />
             </div>
-            <div className="relative w-20 h-8">
-              <Image src="/srij.svg" alt="SRIJ" fill className="object-contain" />
+            <div className="relative w-24 h-8">
+              <Image src="/srij.png" alt="SRIJ" fill className="object-contain" />
+            </div>
+            <div className="relative w-28 h-8">
+              <Image src="/jogo-responsavel.png" alt="Utilizacao Responsavel" fill className="object-contain" />
             </div>
           </div>
           <div className="text-[8px] text-white/10 uppercase tracking-[0.4em] font-black">

@@ -3,8 +3,10 @@ import Hero from "@/components/Hero";
 import BrandCard from "@/components/BrandCard";
 import DisclaimerBar from "@/components/DisclaimerBar";
 import AboutSection from "@/components/AboutSection";
+import FaqSection from "@/components/FaqSection";
 import MobileModal from "@/components/MobileModal";
 import AffiliateDisclosure from "@/components/AffiliateDisclosure";
+import ComplianceTopBar from "@/components/ComplianceTopBar";
 import { Suspense } from "react";
 
 interface PageProps {
@@ -16,9 +18,15 @@ export default async function Home({ searchParams }: PageProps) {
   const gclid = typeof params.gclid === "string" ? params.gclid : undefined;
 
   const displayBrands = brands.filter((b) => !b.isMobile);
+  const updatedLabel = new Intl.DateTimeFormat("pt-PT", {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+  }).format(new Date());
 
   return (
     <div className="flex flex-col min-h-screen">
+      <ComplianceTopBar />
       <AffiliateDisclosure />
       <Hero />
 
@@ -26,10 +34,13 @@ export default async function Home({ searchParams }: PageProps) {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-black mb-4 uppercase tracking-tight">
-              Top <span className="text-primary">Casinos</span> Recomendados
+              Top <span className="text-primary">Plataformas</span> Elite
             </h2>
+            <p className="text-[10px] font-black uppercase tracking-[0.3em] text-white/30 mb-4">
+              Atualizado editorialmente — {updatedLabel}
+            </p>
             <p className="text-white/60 max-w-2xl mx-auto">
-              A nossa seleção rigorosa dos melhores sites com base em segurança, bónus e experiência do utilizador.
+              A nossa seleção rigorosa das melhores plataformas com base em segurança, bónus e experiência do utilizador.
             </p>
           </div>
 
@@ -50,6 +61,8 @@ export default async function Home({ searchParams }: PageProps) {
       <DisclaimerBar />
 
       <AboutSection />
+
+      <FaqSection />
 
       <Suspense fallback={null}>
         <MobileModal gclid={gclid} />

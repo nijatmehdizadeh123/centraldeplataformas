@@ -8,23 +8,24 @@ export default function DisclaimerBar() {
           <div className="flex items-center gap-3 flex-shrink-0">
             <span className="text-red-500 text-lg font-black" aria-hidden="true">⚠</span>
             <span className="font-black text-white uppercase tracking-widest text-sm">
-              Apenas para adultos 18+.
+              Apenas 18+.
             </span>
           </div>
 
           <p className="text-xs text-white/60 leading-relaxed">
-            O jogo pode causar dependência. Para ajuda, ligue{' '}
-            <span className="text-white font-bold">213 123 400</span>{' '}
-            ou visite{' '}
+            Utilize com responsabilidade. Pode criar dependência. Se precisar de ajuda, contacte a Linha de Vida{' '}
+            <span className="text-white font-bold">1414</span>
+            {' '}ou{' '}
+            <span className="text-white font-bold">+351 211 167 300</span>
+            . Regulado pelo SRIJ.{' '}
             <Link
               href="https://www.jogoresponsavel.pt/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-primary hover:underline font-bold"
             >
-              Jogo Responsável
+              jogoresponsavel.pt
             </Link>
-            . Regulado pelo SRIJ.
           </p>
         </div>
       </div>

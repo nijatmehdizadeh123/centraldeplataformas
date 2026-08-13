@@ -25,9 +25,9 @@ declare global {
 }
 
 const RANK_BADGES: Record<number, { label: string; className: string }> = {
-  1: { label: '🥇 #1', className: 'from-[#f9d423] via-[#e2b74b] to-[#b8860b]' },
-  2: { label: '🥈 #2', className: 'from-[#c0c0c0] via-[#e8e8e8] to-[#a0a0a0]' },
-  3: { label: '🥉 #3', className: 'from-[#cd7f32] via-[#e8a862] to-[#a0522d]' },
+  1: { label: 'Escolha do Editor', className: 'from-[#f5d76e] via-[#d4af37] to-[#8b6e31]' },
+  2: { label: 'Mais Popular', className: 'from-[#e8d5a3] via-[#c5a059] to-[#8b6e31]' },
+  3: { label: 'Em Destaque', className: 'from-[#d4af37] via-[#b8963a] to-[#6b5424]' },
 };
 
 const getBadgeTextColor = (hex: string) => {
@@ -38,7 +38,7 @@ const getBadgeTextColor = (hex: string) => {
   const g = (num >> 8) & 255;
   const b = num & 255;
   const luminance = (0.299 * r + 0.587 * g + 0.114 * b) / 255;
-  return luminance > 0.6 ? '#0a0514' : '#fff';
+  return luminance > 0.6 ? '#0a0a0a' : '#fff';
 };
 
 const generateDynamicRating = (rank: number) => {
@@ -94,10 +94,11 @@ export default function BrandCard({ brand, gclidValue, rank, variant = 'default'
         onClick={handleCardClick}
         role="button"
         tabIndex={0}
-        onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') handleCardClick(); }}
-        className="casino-card-bg casino-glow relative group cursor-pointer rounded-2xl overflow-hidden transition-all duration-300 hover:-translate-y-1"
+        onKeyDown={(e) => {
+          if (e.key === 'Enter' || e.key === ' ') handleCardClick();
+        }}
+        className="platform-card-bg platform-glow relative group cursor-pointer rounded-2xl overflow-hidden transition-all duration-300 hover:-translate-y-1"
       >
-        {/* Corner accent decorations */}
         <div className="absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 border-primary/40 rounded-tl-2xl pointer-events-none" />
         <div className="absolute top-0 right-0 w-8 h-8 border-t-2 border-r-2 border-accent/40 rounded-tr-2xl pointer-events-none" />
         <div className="absolute bottom-0 left-0 w-8 h-8 border-b-2 border-l-2 border-accent/30 rounded-bl-2xl pointer-events-none" />
@@ -105,7 +106,6 @@ export default function BrandCard({ brand, gclidValue, rank, variant = 'default'
 
         <div className={isModal ? 'p-4' : 'p-5'}>
           <div className="flex items-start justify-between gap-4">
-            {/* LEFT: logo + rating */}
             <div className="flex flex-col items-start flex-shrink-0">
               <div className={`relative flex items-center justify-center ${isModal ? 'w-28 h-14 mb-1.5' : 'w-32 h-16 mb-2'}`}>
                 <Image
@@ -118,7 +118,7 @@ export default function BrandCard({ brand, gclidValue, rank, variant = 'default'
                 />
               </div>
               <div className={`flex items-center gap-1 ${isModal ? 'mb-1' : 'mb-1.5'}`}>
-                <div className={`flex text-[#f9d423] ${isModal ? 'text-[8px]' : 'text-[9px]'}`} aria-hidden="true">
+                <div className={`flex text-[#d4af37] ${isModal ? 'text-[8px]' : 'text-[9px]'}`} aria-hidden="true">
                   {[...Array(5)].map((_, i) => (
                     <span key={i}>★</span>
                   ))}
@@ -133,26 +133,29 @@ export default function BrandCard({ brand, gclidValue, rank, variant = 'default'
               </div>
             </div>
 
-            {/* RIGHT: bonus + CTA */}
             <div className="flex flex-col items-end text-right flex-grow min-w-0">
               <div className={`inline-block rounded-full bg-white/5 border border-white/10 ${isModal ? 'px-2 py-0.5 mb-1.5' : 'px-2.5 py-1 mb-2'}`}>
                 <span className={`font-black uppercase tracking-[0.2em] text-primary ${isModal ? 'text-[7px]' : 'text-[9px]'}`}>
                   Bónus Exclusivo
                 </span>
               </div>
-              <div className={`font-black leading-snug tracking-tight ${isModal ? 'text-[13px] mb-2.5' : 'text-sm mb-3'}`}>
+              <div className={`font-black leading-snug tracking-tight ${isModal ? 'text-[13px] mb-2' : 'text-sm mb-2'}`}>
                 {highlightBonus(brand.bonus)}
+              </div>
+              <div className={`text-green-400/80 font-bold uppercase tracking-widest mb-2 ${isModal ? 'text-[8px]' : 'text-[9px]'}`}>
+                ✓ Pagamento Verificado
               </div>
 
               <button
                 type="button"
                 className={`w-full btn-gradient rounded-xl shadow-lg shadow-primary/20 uppercase font-black tracking-[0.15em] active:scale-95 group-hover:scale-[1.01] overflow-hidden relative transition-all duration-300 gold-shimmer ${isModal ? 'py-2.5 text-[10px]' : 'py-3 text-xs'}`}
               >
-                <span className="relative z-10">
-                  {rank === 1 ? 'Reclamar Oferta' : 'Visitar Agora'}
-                </span>
+                <span className="relative z-10">Obter Bónus</span>
                 <div className="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity" />
               </button>
+              <p className={`text-white/25 mt-2 ${isModal ? 'text-[7px]' : 'text-[8px]'}`}>
+                +18. Aplicam-se T&amp;C. Apenas novos utilizadores.
+              </p>
             </div>
           </div>
         </div>

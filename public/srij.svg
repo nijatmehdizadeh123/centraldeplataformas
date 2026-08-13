@@ -1,4 +1,5 @@
-<svg width="120" height="40" viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect width="120" height="40" rx="4" fill="#1a0a2e"/>
-  <text x="60" y="26" font-family="Arial, Helvetica, sans-serif" font-weight="900" font-size="14" fill="#ffffff" text-anchor="middle" letter-spacing="2">SRIJ</text>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="140" height="48" viewBox="0 0 140 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="140" height="48" rx="6" fill="#161616" stroke="#d4af37" stroke-width="1.5"/>
+  <text x="70" y="30" font-family="Georgia, serif" font-weight="700" font-size="16" fill="#d4af37" text-anchor="middle" letter-spacing="3">SRIJ</text>
 </svg>
