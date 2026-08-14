@@ -14,6 +14,8 @@ export interface Brand {
   };
 }
 
+const generateId = (name: string) => name.toLowerCase().replace(/\s+/g, '-');
+
 export const brands: Brand[] = [
  
  
@@ -57,53 +59,50 @@ export const brands: Brand[] = [
     
     
   // },
-  {
-    id: "SpinFormula",
-    name: "SpinFormula",
-    logo: "/brands/Spinformula.svg",
-    rating: 9.9,
-    bonus: "550% até 15000€ + 550 Rodadas Grátis",
-    url: "https://corsa.cxclick.com/visit/?bta=35059&nci=5345&utm_campaign=SpinFormula-SL2FR9&afp=",
-    isMobile: true,
-    votes: 12450,
-    badge: { text: "Melhor Oferta", color: "#d4af37" },
-  },
-  {
+  // {
+  //   id: "WinoCasino",
+  //   name: "WinoCasino",
+  //   logo: "/brands/wino.svg",
+  //   rating: 9.7,
+  //   bonus: "600% jusqu’à 10000€",
+  //   url: "https://go.afftrackio.com/visit/?bta=35487&nci=5357&utm_campaign=WinoCasino-SL2FR9&afp=",
+  //   isMobile: true,
+  //   votes: 12450,
+  //   badge: { text: "Nouvelle Offre", color: "#a020f0" },
+  // },
+  // {
+  //   id: "SpinFormula",
+  //   name: "SpinFormula",
+  //   logo: "/brands/Spinformula.svg",
+  //   rating: 9.9,
+  //   bonus: "550% jusqu’à 15000€ + 550FS",
+  //   url: "https://corsa.cxclick.com/visit/?bta=35059&nci=5345&utm_campaign=SpinFormula-SL2FR9&afp=",
+  //   isMobile: true,
+  //   votes: 12450,
+  //   badge: { text: "Meilleure Offre", color: "#00f5ff" },
+  // },
+  // {
     
-    id: "SlotRush",
-    name: "SlotRush",
-    logo: "/brands/SLOTRUSH.png",
-    rating: 9.8,
-    bonus: "Até 4000€ + 200 Rodadas Grátis",
-    url: "https://linkslotrush.com/iyhqswoke?subid=SlotRush-SL2FR9&clickid=",
-    isMobile: true,
-    votes: 12450,
-    badge: { text: "Levantamentos Rápidos", color: "#8b6e31" },
+  //   id: "SlotRush",
+  //   name: "SlotRush",
+  //   logo: "/brands/SLOTRUSH.png",
+  //   rating: 9.8,
+  //   bonus: "Jusqu'à 4000€ + 200FS",
+  //   url: "https://linkslotrush.com/iyhqswoke?subid=SlotRush-SL2FR9&clickid=",
+  //   isMobile: true,
+  //   votes: 12450,
+  //   badge: { text: "Retraits Rapides", color: "#22c55e" },
 
-  },
-
-  {
-    id: "WinoCasino",
-    name: "Wino",
-    logo: "/brands/wino.svg",
-    rating: 9.7,
-    bonus: "600% até 10000€",
-    url: "https://go.afftrackio.com/visit/?bta=35487&nci=5357&utm_campaign=WinoCasino-SL2FR9&afp=",
-    isMobile: true,
-    votes: 12450,
-    badge: { text: "Nova Oferta", color: "#f5d76e" },
-  },
-  
+  // },
   // {
   //   id: "BravoPlay",
   //   name: "BravoPlay",
   //   logo: "/brands/bravoplay.svg",
-  //   rating: 9.7,
+  //   rating: 9.6,
   //   bonus: "Jusqu'à 5000€ + 150FS",
   //   url: "https://trk.arztrc.site/click?o=1&a=82&c=314&link_id=39&sub_id1=BravoPlay-SL2FR9&aff_click_id=",
   //   isMobile: true,
   //   votes: 12450,
-  //   badge: { text: "Nouvelle Offre", color: "#a020f0" },
   // }
   // ,
   // {
@@ -486,11 +485,10 @@ export const brands: Brand[] = [
     name: "Bwin",
     logo: "/bwin_dark.png",
     rating: 9.6,
-    bonus: "100% até 200€ de bónus de boas-vindas",
+    bonus: "Votre mise remboursée jusqu'à 100€",
     url: "https://mediaserver.entainpartners.com/renderBanner.do?zoneId=2159573&clickid=",
     isMobile: false,
-    votes: 15000,
-    displayUrl: "bwin.pt",
-    badge: { text: "1º Elite", color: "#d4af37" },
+    votes: 12450,
+    displayUrl: "bwin.com"
   }
 ];
