@@ -5,8 +5,8 @@ import Link from 'next/link';
 
 const FAQ_ITEMS = [
   {
-    q: 'As plataformas online em Portugal são legais?',
-    a: 'Sim. Em Portugal, os operadores devem cumprir a legislação nacional e estar sujeitos à supervisão do SRIJ. Recomendamos apenas plataformas que passam a nossa verificação de conformidade.',
+    q: 'Os operadores apresentados estão licenciados em Portugal?',
+    a: 'Sim. Apenas divulgamos marcas licenciadas com as quais temos acordo de afiliados. Não publicitamos operadores sem licença.',
   },
   {
     q: 'Qual é a idade mínima?',
@@ -18,11 +18,11 @@ const FAQ_ITEMS = [
   },
   {
     q: 'Pago para usar este site?',
-    a: 'Não. A Central de Plataformas é gratuita. Somos financiados por comissões de afiliados quando se regista através dos nossos links.',
+    a: 'Não. O site é gratuito. Não cobramos nada ao utilizador. Recebemos comissão das marcas licenciadas consoante o desempenho da publicidade.',
   },
   {
     q: 'Que métodos de pagamento posso usar?',
-    a: 'As plataformas que recomendamos aceitam tipicamente MB Way, Multibanco, cartões e carteiras digitais. Os levantamentos são processados de forma segura, muitas vezes em 24–48 horas.',
+    a: 'Os métodos dependem de cada operador. Exemplos comuns em Portugal incluem MB Way, Multibanco, cartões e carteiras digitais. Confirme no site do operador.',
   },
 ];
 

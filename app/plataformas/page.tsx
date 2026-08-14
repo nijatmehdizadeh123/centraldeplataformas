@@ -3,6 +3,7 @@ import { brands } from "@/app/data/brands";
 import BrandCard from "@/components/BrandCard";
 import DisclaimerBar from "@/components/DisclaimerBar";
 import SubpageHero from "@/components/SubpageHero";
+import RankingDisclaimer from "@/components/RankingDisclaimer";
 import { SITE } from "@/app/data/site";
 
 export const metadata: Metadata = {
@@ -30,7 +31,7 @@ export default async function PlataformasPage({ searchParams }: PageProps) {
         <SubpageHero
           title="Top"
           highlight="Plataformas"
-          subtitle="A nossa seleção rigorosa com base em segurança, bónus e experiência do utilizador."
+          subtitle="Seleção de marcas licenciadas com acordo de afiliados. Site gratuito para o utilizador."
         />
         <p className="text-[10px] font-black uppercase tracking-[0.3em] text-white/30 mb-10 -mt-6">
           Atualizado editorialmente — {updatedLabel}
@@ -47,6 +48,7 @@ export default async function PlataformasPage({ searchParams }: PageProps) {
             />
           ))}
         </div>
+        <RankingDisclaimer />
       </div>
 
       <DisclaimerBar />

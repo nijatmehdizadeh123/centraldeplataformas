@@ -1,6 +1,7 @@
 'use client';
 
 import { FormEvent, useState } from 'react';
+import Link from 'next/link';
 import { SITE } from '@/app/data/site';
 
 export default function ContactForm() {
@@ -77,6 +78,15 @@ export default function ContactForm() {
           className="w-full rounded-xl bg-white/5 border border-white/10 px-4 py-3 text-sm text-white outline-none focus:border-primary/50 transition-colors resize-y"
           placeholder="Escreva a sua mensagem..."
         />
+      </div>
+      <div className="flex items-start gap-3">
+        <input id="consent" name="consent" type="checkbox" required className="mt-1" />
+        <label htmlFor="consent" className="text-xs text-white/50 leading-relaxed">
+          Tenho 18 ou mais anos e aceito a{' '}
+          <Link href="/privacidade" className="text-primary hover:underline">política de privacidade</Link>
+          {' '}e os{' '}
+          <Link href="/termos" className="text-primary hover:underline">termos</Link>.
+        </label>
       </div>
       <button type="submit" className="btn-gradient w-full rounded-xl py-3.5 text-xs font-black uppercase tracking-[0.2em]">
         Enviar mensagem

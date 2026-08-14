@@ -9,7 +9,7 @@ export default function AffiliateDisclosure() {
             </svg>
           </div>
           <span>
-            Divulgação de Publicidade: Recurso gratuito financiado por comissões de afiliados
+            Divulgação de publicidade: site gratuito. Comissão paga pelas marcas licenciadas parceiras.
           </span>
         </div>
       </div>

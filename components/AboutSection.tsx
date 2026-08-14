@@ -11,7 +11,7 @@ export default function AboutSection() {
             O Nosso Padrão de <span className="gold-text">Excelência</span>
           </h2>
           <p className="text-white/70 font-medium">
-            Como escolhemos as melhores plataformas online: verificamos licenças SRIJ, termos de bónus e apoio ao cliente para avaliações justas e comparáveis.
+            Como apresentamos plataformas: apenas marcas licenciadas com acordo de afiliados. Não somos operador. O site é gratuito para si.
           </p>
         </div>
 
@@ -19,11 +19,11 @@ export default function AboutSection() {
           {[
             {
               title: 'Regulação em Portugal',
-              text: 'Confirmamos licenças SRIJ e conformidade com a legislação portuguesa para que apenas operadores legítimos apareçam nas nossas listas.',
+              text: 'Só divulgamos marcas licenciadas com as quais temos acordo de afiliados. O SRIJ é a autoridade oficial em Portugal.',
             },
             {
               title: 'Bónus e Termos',
-              text: 'Analisamos termos de bónus, requisitos de volume e políticas de levantamento para que saiba exatamente o que esperar antes de se registar.',
+              text: 'As ofertas publicitadas incluem termos do operador. Prazos de levantamento variam e não são garantidos por este site.',
             },
             {
               title: 'Apoio ao Cliente',
@@ -42,14 +42,14 @@ export default function AboutSection() {
             <div className="bg-[#161616] p-10 rounded-[23px] h-full border border-[#d4af37]/10">
               <h3 className="text-2xl font-black mb-8 flex items-center gap-4 uppercase tracking-tight text-white/90">
                 <span className="w-10 h-10 flex items-center justify-center rounded-full bg-primary/10 text-primary text-sm">✓</span>
-                Processo de Avaliação Elite
+                Processo de Avaliação
               </h3>
               <ul className="space-y-6">
                 {[
-                  { title: 'Auditoria de Licença', desc: 'Verificação em tempo real com o SRIJ.' },
-                  { title: 'Teste de Liquidez', desc: 'Depósitos e levantamentos reais para testar a velocidade.' },
-                  { title: 'Análise de Segurança', desc: 'Verificação de encriptação e proteção de dados.' },
-                  { title: 'Suporte VIP', desc: 'Avaliação da qualidade e tempo de resposta 24/7.' },
+                  { title: 'Licença', desc: 'Recomendamos confirmar a licença no SRIJ. Este site não emite licenças.' },
+                  { title: 'Ofertas', desc: 'Os bónus apresentados são publicidade e podem mudar sem aviso.' },
+                  { title: 'Segurança', desc: 'Avaliação editorial com base em informação pública e testes internos quando aplicável.' },
+                  { title: 'Apoio', desc: 'A qualidade do apoio pode variar. Não substituímos o suporte do operador.' },
                 ].map((item) => (
                   <li key={item.title} className="flex items-start gap-4 group">
                     <span className="text-primary mt-1 group-hover:scale-125 transition-transform">✓</span>
@@ -87,7 +87,7 @@ export default function AboutSection() {
                   </Link>
                 </div>
                 <p className="text-[11px] text-white/30 leading-relaxed">
-                  Regulado pelo SRIJ — Serviço de Regulação e Inspeção de Jogos.{' '}
+                  Não somos operador nem regulador. O SRIJ regula os operadores licenciados em Portugal.{' '}
                   <Link
                     href="https://www.srij.turismodeportugal.pt/"
                     target="_blank"

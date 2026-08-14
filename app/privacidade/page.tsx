@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import SubpageHero from "@/components/SubpageHero";
 import { SITE } from "@/app/data/site";
 
 export const metadata: Metadata = {
   title: `Política de Privacidade — ${SITE.name}`,
-  description: `Política de privacidade de ${SITE.domain}.`,
+  description: `Política de privacidade e RGPD de ${SITE.domain}.`,
 };
 
 export default function PrivacidadePage() {
@@ -12,43 +13,61 @@ export default function PrivacidadePage() {
     <div className="container mx-auto px-4 py-16 md:py-24 max-w-4xl">
       <SubpageHero title="Política de" highlight="Privacidade" />
 
-      <div className="space-y-8 text-white/70 leading-relaxed">
+      <div className="space-y-8 text-white/70 leading-relaxed text-sm">
         <p>
-          Na {SITE.name}, acessível através de {SITE.domain}, uma das nossas principais prioridades é a privacidade dos nossos visitantes. Este documento contém os tipos de informações que são recolhidas e registadas e como as utilizamos.
+          A {SITE.name} ({SITE.domain}), editora em {SITE.country}, trata dados pessoais nos termos do Regulamento Geral sobre a Proteção de Dados (RGPD).
+          Contacto do responsável: <a href={`mailto:${SITE.email}`} className="text-primary hover:underline">{SITE.email}</a>.
         </p>
 
         <section>
-          <h2 className="text-2xl font-black text-white uppercase tracking-tight mb-4">Ficheiros de Registo</h2>
+          <h2 className="text-2xl font-black text-white uppercase tracking-tight mb-4">Que dados recolhemos</h2>
+          <ul className="list-disc pl-6 space-y-2">
+            <li>Dados técnicos: endereço IP, tipo de navegador, páginas visitadas, data e hora.</li>
+            <li>Dados de contacto, se nos escrever: nome, email e mensagem.</li>
+            <li>Identificadores de campanha, como o parâmetro gclid, quando chega através de anúncios.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-black text-white uppercase tracking-tight mb-4">Para que servem</h2>
+          <ul className="list-disc pl-6 space-y-2">
+            <li>Funcionamento e segurança do site (interesse legítimo).</li>
+            <li>Responder a contactos (execução de pedido / consentimento).</li>
+            <li>Estatísticas e medição de anúncios (Google Analytics / Google Ads), apenas com o seu consentimento.</li>
+            <li>Atribuição de cliques em links de afiliados.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-black text-white uppercase tracking-tight mb-4">Cookies, Google Ads e Analytics</h2>
           <p>
-            Seguimos um procedimento padrão de utilização de ficheiros de registo. As informações recolhidas incluem endereços IP, tipo de navegador, ISP, carimbo de data/hora, páginas de referência/saída e, eventualmente, o número de cliques.
+            Os cookies não essenciais (estatística e publicidade) só são ativados depois de aceitar no banner. Pode recusar.
+            O Google pode tratar dados nos EUA segundo as suas políticas. Consulte também a nossa{' '}
+            <Link href="/cookies" className="text-primary hover:underline">política de cookies</Link>.
           </p>
         </section>
 
         <section>
-          <h2 className="text-2xl font-black text-white uppercase tracking-tight mb-4">Cookies e Web Beacons</h2>
+          <h2 className="text-2xl font-black text-white uppercase tracking-tight mb-4">Conservação</h2>
           <p>
-            Como qualquer outro website, utilizamos &quot;cookies&quot; para armazenar informações, incluindo preferências dos visitantes e páginas visitadas, de forma a otimizar a experiência do utilizador.
+            Dados de contacto: até 12 meses após a última mensagem, salvo obrigação legal. Logs técnicos: prazo curto de segurança.
+            Consentimento de cookies: até 12 meses.
           </p>
         </section>
 
         <section>
-          <h2 className="text-2xl font-black text-white uppercase tracking-tight mb-4">Parceiros Publicitários</h2>
+          <h2 className="text-2xl font-black text-white uppercase tracking-tight mb-4">Os seus direitos</h2>
           <p>
-            Alguns anunciantes no nosso site podem utilizar cookies e web beacons. Cada parceiro publicitário tem a sua própria política de privacidade relativa aos dados dos utilizadores.
+            Pode pedir acesso, retificação, apagamento, limitação, oposição e portabilidade, e retirar o consentimento a qualquer momento.
+            Também pode apresentar reclamação à CNPD (www.cnpd.pt). Pedidos: {SITE.email}.
           </p>
         </section>
 
         <section>
-          <h2 className="text-2xl font-black text-white uppercase tracking-tight mb-4">Contacto</h2>
+          <h2 className="text-2xl font-black text-white uppercase tracking-tight mb-4">Afiliados</h2>
           <p>
-            Para questões sobre esta política, contacte-nos em{' '}
-            <a href={`mailto:${SITE.email}`} className="text-primary hover:underline">{SITE.email}</a>.
+            Este site usa links de afiliados apenas com marcas licenciadas parceiras. Não cobramos ao utilizador. A comissão é paga pela marca consoante o desempenho da publicidade.
           </p>
-        </section>
-
-        <section>
-          <h2 className="text-2xl font-black text-white uppercase tracking-tight mb-4">Consentimento</h2>
-          <p>Ao utilizar o nosso website, consente com esta política de privacidade e aceita os seus termos.</p>
         </section>
       </div>
     </div>

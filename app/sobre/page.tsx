@@ -5,7 +5,7 @@ import { SITE } from "@/app/data/site";
 
 export const metadata: Metadata = {
   title: `Sobre Nós — ${SITE.name}`,
-  description: `Conheça a missão e o método de análise da ${SITE.name}. Informação independente e transparente.`,
+  description: `Conheça a ${SITE.name}: comparação, publicidade de afiliados e critérios editoriais.`,
 };
 
 export default function SobrePage() {
@@ -14,13 +14,13 @@ export default function SobrePage() {
       <SubpageHero
         title="Sobre a"
         highlight="Central de Plataformas"
-        subtitle="Informação independente e transparente para ajudá-lo a tomar decisões informadas."
+        subtitle="Site informativo de publicidade. Apenas marcas licenciadas parceiras. Gratuito para o utilizador."
       />
 
       <div className="space-y-10 text-white/70 leading-relaxed">
         <p>
-          A {SITE.name} é uma plataforma dedicada a análises honestas e independentes e a guias especializados.
-          Ajudamos os utilizadores a encontrar opções fidedignas com critérios claros e atualizações regulares.
+          A {SITE.name} é um anunciante informativo. Não somos operador. Apenas divulgamos marcas licenciadas com as quais temos acordo de afiliados.
+          O site é gratuito: não cobramos nada a si.
         </p>
 
         <section>
@@ -34,8 +34,7 @@ export default function SobrePage() {
         <section>
           <h2 className="text-2xl font-black text-white uppercase tracking-tight mb-4">Como analisamos</h2>
           <p>
-            Verificamos credenciais, analisamos termos e testamos o apoio ao cliente. Os nossos rankings e guias são
-            atualizados regularmente para que possa confiar em avaliações atuais e comparáveis.
+            Analisamos informação pública e termos das ofertas das marcas licenciadas parceiras.
           </p>
         </section>
 
@@ -72,8 +71,8 @@ export default function SobrePage() {
         <section className="rounded-2xl border border-[#d4af37]/15 bg-[#161616] p-8">
           <h2 className="text-xl font-black text-white uppercase tracking-tight mb-3">Afiliados e transparência</h2>
           <p className="text-sm">
-            A {SITE.name} pode utilizar links de afiliados. Se se registar através dos nossos links, podemos receber uma
-            comissão. Isto não tem custo adicional para si e ajuda-nos a manter o site gratuito e atualizado.
+            A {SITE.name} só publicita marcas licenciadas com acordo de afiliados. Não cobramos nada ao utilizador.
+            Recebemos comissão dessas marcas consoante o desempenho da publicidade. Não somos operador.
           </p>
         </section>
 

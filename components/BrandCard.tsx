@@ -62,12 +62,11 @@ export default function BrandCard({ brand, gclidValue, rank, variant = 'default'
   const dynamicRating = generateDynamicRating(rank);
   const rankBadge = RANK_BADGES[rank];
 
-  const handleCardClick = () => {
+  const handleCardClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     track('Brand Click', { brand: brand.name });
     if (typeof window.gtag_report_conversion === 'function') {
+      e.preventDefault();
       window.gtag_report_conversion(finalUrl);
-    } else {
-      window.open(finalUrl, '_blank', 'noopener,noreferrer');
     }
   };
 
@@ -90,14 +89,12 @@ export default function BrandCard({ brand, gclidValue, rank, variant = 'default'
         </div>
       )}
 
-      <div
+      <a
+        href={finalUrl}
+        target="_blank"
+        rel="noopener noreferrer"
         onClick={handleCardClick}
-        role="button"
-        tabIndex={0}
-        onKeyDown={(e) => {
-          if (e.key === 'Enter' || e.key === ' ') handleCardClick();
-        }}
-        className="platform-card-bg platform-glow relative group cursor-pointer rounded-2xl overflow-hidden transition-all duration-300 hover:-translate-y-1"
+        className="platform-card-bg platform-glow relative group block rounded-2xl overflow-hidden transition-all duration-300 hover:-translate-y-1"
       >
         <div className="absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 border-primary/40 rounded-tl-2xl pointer-events-none" />
         <div className="absolute top-0 right-0 w-8 h-8 border-t-2 border-r-2 border-accent/40 rounded-tr-2xl pointer-events-none" />
@@ -129,37 +126,36 @@ export default function BrandCard({ brand, gclidValue, rank, variant = 'default'
                 <span className={`text-white/40 font-medium ${isModal ? 'text-[8px]' : 'text-[9px]'}`}>/10</span>
               </div>
               <div className={`text-white/30 font-medium ${isModal ? 'text-[8px]' : 'text-[9px]'}`}>
-                {brand.votes.toLocaleString('pt-PT')} votos
+                Pontuação editorial
               </div>
             </div>
 
             <div className="flex flex-col items-end text-right flex-grow min-w-0">
               <div className={`inline-block rounded-full bg-white/5 border border-white/10 ${isModal ? 'px-2 py-0.5 mb-1.5' : 'px-2.5 py-1 mb-2'}`}>
                 <span className={`font-black uppercase tracking-[0.2em] text-primary ${isModal ? 'text-[7px]' : 'text-[9px]'}`}>
-                  Bónus Exclusivo
+                  Anúncio
                 </span>
               </div>
               <div className={`font-black leading-snug tracking-tight ${isModal ? 'text-[13px] mb-2' : 'text-sm mb-2'}`}>
                 {highlightBonus(brand.bonus)}
               </div>
-              <div className={`text-green-400/80 font-bold uppercase tracking-widest mb-2 ${isModal ? 'text-[8px]' : 'text-[9px]'}`}>
-                ✓ Pagamento Verificado
+              <div className={`text-white/35 font-bold uppercase tracking-widest mb-2 ${isModal ? 'text-[8px]' : 'text-[9px]'}`}>
+                Link de afiliado
               </div>
 
-              <button
-                type="button"
-                className={`w-full btn-gradient rounded-xl shadow-lg shadow-primary/20 uppercase font-black tracking-[0.15em] active:scale-95 group-hover:scale-[1.01] overflow-hidden relative transition-all duration-300 gold-shimmer ${isModal ? 'py-2.5 text-[10px]' : 'py-3 text-xs'}`}
+              <span
+                className={`w-full btn-gradient rounded-xl shadow-lg shadow-primary/20 uppercase font-black tracking-[0.15em] inline-flex items-center justify-center group-hover:scale-[1.01] overflow-hidden relative transition-all duration-300 gold-shimmer ${isModal ? 'py-2.5 text-[10px]' : 'py-3 text-xs'}`}
               >
                 <span className="relative z-10">Obter Bónus</span>
-                <div className="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity" />
-              </button>
-              <p className={`text-white/25 mt-2 ${isModal ? 'text-[7px]' : 'text-[8px]'}`}>
-                +18. Aplicam-se T&amp;C. Apenas novos utilizadores.
+                <span className="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity" />
+              </span>
+              <p className={`text-white/35 mt-2 ${isModal ? 'text-[7px]' : 'text-[8px]'}`}>
+                +18. Aplicam-se termos e condições da marca licenciada. Ofertas sujeitas a alteração.
               </p>
             </div>
           </div>
         </div>
-      </div>
+      </a>
     </div>
   );
 }

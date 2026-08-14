@@ -14,18 +14,18 @@ export default function GuiaPage() {
       <SubpageHero
         title="Guia de"
         highlight="Avaliação"
-        subtitle="Como escolhemos as melhores plataformas online: licenças SRIJ, termos de bónus e apoio ao cliente."
+        subtitle="Como apresentamos plataformas: apenas marcas licenciadas com acordo de afiliados. Site gratuito para si."
       />
 
       <div className="space-y-8">
         {[
           {
             title: "Regulação em Portugal",
-            text: "Confirmamos licenças SRIJ e conformidade com a legislação portuguesa para que apenas operadores legítimos apareçam nas nossas listas.",
+            text: "Só divulgamos marcas licenciadas com acordo de afiliados. O SRIJ é a autoridade oficial em Portugal.",
           },
           {
             title: "Bónus e termos",
-            text: "Analisamos termos de bónus, requisitos de volume e políticas de levantamento para que saiba exatamente o que esperar antes de se registar.",
+            text: "As ofertas são publicidade. Os termos, requisitos de volume e prazos de levantamento pertencem ao operador e podem mudar.",
           },
           {
             title: "Apoio ao cliente",
@@ -37,7 +37,7 @@ export default function GuiaPage() {
           },
           {
             title: "Métodos de pagamento em Portugal",
-            text: "As plataformas que recomendamos aceitam tipicamente MB Way, Multibanco, cartões e carteiras digitais. Os levantamentos são muitas vezes concluídos em 24–48 horas.",
+            text: "Os métodos variam por operador (por exemplo MB Way, Multibanco, cartões ou carteiras digitais). Os prazos não são garantidos por este site.",
           },
           {
             title: "Utilização responsável",

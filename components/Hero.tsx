@@ -29,7 +29,7 @@ export default function Hero() {
         </h1>
 
         <p className="text-base md:text-lg text-white/50 mb-8 max-w-xl mx-auto font-normal leading-relaxed">
-          Experiência premium, bónus exclusivos e os pagamentos mais rápidos do mercado. Compare ofertas verificadas e tome decisões informadas.
+          Comparação informativa de marcas licenciadas. Site gratuito para si. Apenas 18+.
         </p>
 
         <p className="text-[10px] font-black uppercase tracking-[0.25em] text-white/30 mb-10">
@@ -41,17 +41,17 @@ export default function Hero() {
             {[...Array(2)].map((_, listIdx) => (
               <div key={listIdx} className="flex gap-3 px-1">
                 {[
-                  { icon: 'licensed', text: 'Licenciado SRIJ', color: 'bg-primary/10 border-primary/20 text-primary' },
-                  { icon: 'expert', text: 'Verificado e Confiável', color: 'bg-green-500/10 border-green-500/20 text-green-400' },
-                  { icon: 'withdraw', text: 'Levantamentos Rápidos', color: 'bg-accent/10 border-accent/20 text-accent' },
-                  { icon: '18plus', text: '18+', color: 'bg-red-500/10 border-red-500/20 text-red-400' },
+                  { icon: 'licensed', text: 'Consulte o SRIJ', color: 'bg-primary/10 border-primary/20 text-primary' },
+                  { icon: 'expert', text: 'Análise editorial', color: 'bg-green-500/10 border-green-500/20 text-green-400' },
+                  { icon: 'withdraw', text: 'Compare prazos', color: 'bg-accent/10 border-accent/20 text-accent' },
+                  { icon: '18plus', text: '18+', color: 'bg-primary/10 border-primary/20 text-primary' },
                 ].map((badge, i) => (
                   <div
                     key={`${listIdx}-${i}`}
                     className={`flex items-center gap-2 px-5 py-2.5 rounded-full border backdrop-blur-sm whitespace-nowrap ${badge.color}`}
                   >
                     <div className="relative w-3.5 h-3.5">
-                      <Image src={`/icons/${badge.icon}.svg`} alt="" fill className="object-contain" />
+                      <Image src={badge.icon === '18plus' ? '/ptreg/18plus.png' : `/icons/${badge.icon}.svg`} alt="" fill className="object-contain" />
                     </div>
                     <span className="text-[10px] font-black uppercase tracking-widest">{badge.text}</span>
                   </div>
@@ -63,9 +63,9 @@ export default function Hero() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-5xl mx-auto">
           {[
-            { icon: 'licensed', title: 'Licenciado SRIJ', desc: 'Conformidade verificada' },
-            { icon: 'expert', title: 'Aprovado por Especialistas', desc: 'Análises certificadas' },
-            { icon: 'withdraw', title: 'Levantamentos Imediatos', desc: 'Pagamentos em 24h' },
+            { icon: 'licensed', title: 'Regulação', desc: 'Consulte o SRIJ' },
+            { icon: 'expert', title: 'Análise editorial', desc: 'Critérios públicos' },
+            { icon: 'withdraw', title: 'Transparência', desc: 'Ofertas com termos' },
           ].map((item) => (
             <div
               key={item.title}

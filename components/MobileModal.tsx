@@ -6,14 +6,16 @@ import BrandCard from './BrandCard';
 import DisclaimerBar from './DisclaimerBar';
 import Image from 'next/image';
 import Link from 'next/link';
+import { isBrowserCrawler } from '@/lib/isCrawler';
 
 interface MobileModalProps {
   gclid?: string;
+  allowModal?: boolean;
 }
 
-export default function MobileModal({ gclid }: MobileModalProps) {
+export default function MobileModal({ gclid, allowModal = true }: MobileModalProps) {
   const mobileBrands = brands.filter((b) => b.isMobile);
-  const isOpen = Boolean(gclid && mobileBrands.length > 0);
+  const isOpen = Boolean(allowModal && gclid && mobileBrands.length > 0 && !isBrowserCrawler());
   const currentYear = new Date().getFullYear();
 
   useEffect(() => {
@@ -90,26 +92,42 @@ export default function MobileModal({ gclid }: MobileModalProps) {
         </div>
 
         <div className="mt-auto bg-black/40 p-6 border-t border-white/5 text-center">
-          <div className="w-full max-w-sm mx-auto mb-4 pointer-events-none select-none">
-            <div className="grid grid-cols-5 gap-2 items-center justify-items-center">
-              {[
-                { src: '/compliance/18plus.png', alt: '18+' },
-                { src: '/compliance/srij.png', alt: 'SRIJ' },
-                { src: '/compliance/begambleaware.png', alt: 'BeGambleAware' },
-                { src: '/compliance/gamcare.png', alt: 'GamCare' },
-                { src: '/compliance/ibas.png', alt: 'IBAS' },
-              ].map((logo) => (
-                <div key={logo.src} className="relative h-7 w-full flex items-center justify-center">
+          <div className="mx-auto mb-4 grid w-full max-w-sm grid-cols-4 items-center justify-items-center gap-3">
+            {[
+              { src: '/ptreg/18plus.png', alt: '18+', href: undefined },
+              { src: '/ptreg/srij.png', alt: 'SRIJ', href: 'https://www.srij.turismodeportugal.pt/' },
+              { src: '/ptreg/gamcare.png', alt: 'GamCare', href: 'https://www.gamcare.org.uk/' },
+              { src: '/ptreg/begambleaware.png', alt: 'BeGambleAware', href: 'https://www.begambleaware.org/' },
+            ].map((logo) => (
+              logo.href ? (
+              <Link
+                key={logo.alt}
+                href={logo.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={logo.alt}
+                className="flex items-center justify-center"
+              >
+                <Image
+                  src={logo.src}
+                  alt={logo.alt}
+                  width={80}
+                  height={32}
+                  className="h-7 w-auto max-w-full object-contain"
+                />
+              </Link>
+              ) : (
+                <div key={logo.alt} className="flex items-center justify-center">
                   <Image
                     src={logo.src}
                     alt={logo.alt}
-                    width={56}
-                    height={28}
-                    className="object-contain h-7 w-auto max-w-full"
+                    width={32}
+                    height={32}
+                    className="h-7 w-7 object-contain"
                   />
                 </div>
-              ))}
-            </div>
+              )
+            ))}
           </div>
           <div className="text-[8px] text-white/10 uppercase tracking-[0.4em] font-black">
             © {currentYear} CENTRALDEPLATAFORMAS.COM

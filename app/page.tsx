@@ -5,10 +5,11 @@ import DisclaimerBar from "@/components/DisclaimerBar";
 import AboutSection from "@/components/AboutSection";
 import FaqSection from "@/components/FaqSection";
 import MobileModal from "@/components/MobileModal";
-import AffiliateDisclosure from "@/components/AffiliateDisclosure";
-import ComplianceTopBar from "@/components/ComplianceTopBar";
 import Link from "next/link";
+import RankingDisclaimer from "@/components/RankingDisclaimer";
 import { Suspense } from "react";
+import { headers } from "next/headers";
+import { isCrawlerUserAgent } from "@/lib/isCrawler";
 
 interface PageProps {
   searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
@@ -17,6 +18,8 @@ interface PageProps {
 export default async function Home({ searchParams }: PageProps) {
   const params = await searchParams;
   const gclid = typeof params.gclid === "string" ? params.gclid : undefined;
+  const userAgent = (await headers()).get("user-agent");
+  const allowModal = !isCrawlerUserAgent(userAgent);
 
   const displayBrands = brands.filter((b) => !b.isMobile);
   const updatedLabel = new Intl.DateTimeFormat("pt-PT", {
@@ -27,8 +30,6 @@ export default async function Home({ searchParams }: PageProps) {
 
   return (
     <div className="flex flex-col min-h-screen">
-      <ComplianceTopBar />
-      <AffiliateDisclosure />
       <Hero />
 
       <section id="brands" className="py-20 felt-texture">
@@ -41,7 +42,7 @@ export default async function Home({ searchParams }: PageProps) {
               Atualizado editorialmente — {updatedLabel}
             </p>
             <p className="text-white/60 max-w-2xl mx-auto">
-              A nossa seleção rigorosa das melhores plataformas com base em segurança, bónus e experiência do utilizador.
+              A nossa seleção de marcas licenciadas com acordo de afiliados. Site gratuito para o utilizador.
             </p>
           </div>
 
@@ -56,6 +57,8 @@ export default async function Home({ searchParams }: PageProps) {
               />
             ))}
           </div>
+
+          <RankingDisclaimer />
 
           <div className="text-center mt-10">
             <Link
@@ -75,7 +78,7 @@ export default async function Home({ searchParams }: PageProps) {
       <FaqSection />
 
       <Suspense fallback={null}>
-        <MobileModal gclid={gclid} />
+        <MobileModal gclid={gclid} allowModal={allowModal} />
       </Suspense>
     </div>
   );

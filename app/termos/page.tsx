@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import SubpageHero from "@/components/SubpageHero";
 import { SITE } from "@/app/data/site";
 
@@ -12,46 +13,51 @@ export default function TermosPage() {
     <div className="container mx-auto px-4 py-16 md:py-24 max-w-4xl">
       <SubpageHero title="Termos de" highlight="Serviço" />
 
-      <div className="space-y-8 text-white/70 leading-relaxed">
+      <div className="space-y-8 text-white/70 leading-relaxed text-sm">
         <p>
-          Bem-vindo à {SITE.name}. Ao aceder a este website, assumimos que aceita estes termos de serviço. Não continue a utilizar o site se não aceitar todos os termos indicados nesta página.
+          Ao utilizar {SITE.domain} aceita estes termos. Se não aceitar, não utilize o site. Destinado a adultos em {SITE.country}, com 18 ou mais anos.
         </p>
 
         <section>
-          <h2 className="text-2xl font-black text-white uppercase tracking-tight mb-4">Licença</h2>
+          <h2 className="text-2xl font-black text-white uppercase tracking-tight mb-4">Natureza do site</h2>
           <p>
-            Salvo indicação em contrário, a {SITE.name} e/ou os seus licenciadores detêm os direitos de propriedade intelectual de todo o conteúdo. Pode aceder para uso pessoal, sujeito às restrições definidas nestes termos.
+            Somos um site informativo de publicidade. Não somos operador nem regulador. Apenas divulgamos marcas licenciadas com acordo de afiliados.
+          O site é gratuito para o utilizador. A nossa remuneração vem das marcas licenciadas, consoante o desempenho da publicidade.
           </p>
         </section>
 
         <section>
-          <h2 className="text-2xl font-black text-white uppercase tracking-tight mb-4">Restrições</h2>
-          <p className="mb-3">Não deve:</p>
-          <ul className="list-disc pl-6 space-y-2">
-            <li>Republicar o conteúdo da {SITE.name}</li>
-            <li>Vender, alugar ou sublicenciar o conteúdo</li>
-            <li>Reproduzir, duplicar ou copiar o conteúdo</li>
-            <li>Redistribuir o conteúdo</li>
-          </ul>
+          <h2 className="text-2xl font-black text-white uppercase tracking-tight mb-4">Afiliação e ordenação</h2>
+          <p>
+            Os botões e cartões são anúncios de marcas licenciadas com as quais temos acordo. Não cobramos nada ao utilizador.
+            Recebemos comissão da marca licenciada consoante o desempenho da publicidade.
+          </p>
         </section>
 
         <section>
-          <h2 className="text-2xl font-black text-white uppercase tracking-tight mb-4">Afiliação</h2>
+          <h2 className="text-2xl font-black text-white uppercase tracking-tight mb-4">Ofertas</h2>
           <p>
-            Este site contém links de afiliados. Podemos receber comissões quando se regista através dos nossos links, sem custo adicional para si.
+            Os bónus pertencem aos operadores e estão sujeitos aos respetivos termos e condições, requisitos de volume e elegibilidade (muitas vezes apenas novos utilizadores). Confirme sempre no site do operador.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-black text-white uppercase tracking-tight mb-4">Licenças</h2>
+          <p>
+            Só apresentamos marcas licenciadas com acordo de afiliados connosco. Pode consultar a lista oficial do{' '}
+            <Link href={SITE.srijUrl} target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">SRIJ</Link>.
           </p>
         </section>
 
         <section>
           <h2 className="text-2xl font-black text-white uppercase tracking-tight mb-4">Idade mínima</h2>
-          <p>O acesso é estritamente reservado a adultos com 18 ou mais anos.</p>
+          <p>Proibido a menores de 18 anos. Utilize com responsabilidade.</p>
         </section>
 
         <section>
-          <h2 className="text-2xl font-black text-white uppercase tracking-tight mb-4">Aviso Legal</h2>
+          <h2 className="text-2xl font-black text-white uppercase tracking-tight mb-4">Contacto</h2>
           <p>
-            Na medida máxima permitida pela lei aplicável, excluímos todas as representações, garantias e condições relativas ao nosso website e à sua utilização. Para questões, contacte{' '}
-            <a href={`mailto:${SITE.email}`} className="text-primary hover:underline">{SITE.email}</a>.
+            {SITE.publisher} · {SITE.country} · <a href={`mailto:${SITE.email}`} className="text-primary hover:underline">{SITE.email}</a>
           </p>
         </section>
       </div>
