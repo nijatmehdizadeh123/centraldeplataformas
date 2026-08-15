@@ -486,7 +486,7 @@ export const brands: Brand[] = [
     logo: "/bwin_dark.png",
     rating: 9.6,
     bonus: "Votre mise remboursée jusqu'à 100€",
-    url: "https://mediaserver.entainpartners.com/renderBanner.do?zoneId=2159573&clickid=",
+    url: "https://www.bwin.pt/pt/sports?utm_source=casinotoppt&utm_medium=referral&clickid=",
     isMobile: false,
     votes: 12450,
     displayUrl: "bwin.com"
